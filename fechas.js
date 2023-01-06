@@ -1,54 +1,29 @@
-//trabajando con fechas
+// - La fecha de hoy
 
-let fecha = new Date(2023, 0, 06);
-console.log(fecha);
+let dia = new Date();
+console.log(dia);
 
-//Cada numero representa  año, mes, dia, hora, minuto,segundos
+// - La fecha de tu nacimiento
 
-let fechaDos = new Date(1999, 05, 17, 1, 40, 30);
-console.log(fechaDos);
+let nacimiento = new Date(1992, 07, 18, 12, 40,20);
+console.log(nacimiento);
 
-//tambien se puede representar la fecha en milisegundos tanto positivos como negativos
+// - Un variable que indique si hoy es más tarde (>) que la fecha de tu nacimiento
 
-let fechaTres = new Date(10000000000000);
-console.log(fechaTres);
+let comp = dia.getTime() > nacimiento.getTime();
+console.log(comp);
 
-/*tambien podemos definir fechas a traves de strings */
+// - Una variable que contenga el día de tu nacimiento
 
-let fechaCuatro = new Date("August 18, 1992 00:40:20");
-console.log(fechaCuatro);
+let date = nacimiento.getDate();
+console.log(date);
 
-//se pueden comparar las fechas
+// - Una variable que contenga el mes de tu nacimiento (recuerda que Enero es mes 0)
 
-console.log(fecha > fechaDos);
+let month = nacimiento.getMonth() + 1;
+console.log(month);
 
-// pero no son iguales dos fechas
+// - Una variable que contenga el año de tu nacimiento (con 4 dígitos)
 
-fechaCinco = new Date(2023, 0, 06, 1, 40, 30);
-
-console.log(fechaDos === fechaCinco)//ERROR
-
-//para comparar dos fechas iguales podemos convertirlas primero en milisegundos
-
-//con el metodo .getTime() esto es posible
-
-console.log(fechaDos.getTime() === fechaCinco.getTime());
-
-//para obtener el dia de una fecha podemos usar el getDate();
-
-console.log(fechaDos.getDate());
-
-// para obtener el mes debemos usar el metodo getMonth() (enero 0 - diciembre 11)
-
-console.log(fechaDos.getMonth() + 1);
-
-//y para obtener el año usamos el getFullYear()
-
-console.log(fechaDos.getFullYear());
-
-//para mostrar una fecha en string se hace con .toLocaleDateString()
-
-console.log(fechaDos.toLocaleDateString());
-
-
-
+let year = nacimiento.getFullYear();
+console.log(year);
